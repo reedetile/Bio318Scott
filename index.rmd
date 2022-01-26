@@ -1,0 +1,12 @@
+---
+title: "Bio381: Reed Scott"
+author: "Reed Scott"
+date: "1/26/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Link the [this page](newpage.html)
