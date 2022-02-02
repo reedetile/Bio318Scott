@@ -11,7 +11,7 @@ output:
 Welcome! This is the homepage for that I have created as part of the class Bio 381: Computational Biology
 Please peruse and find all the necessary assignments for this course
 
-#Homeworks
+# Homeworks
 
 [Homework 2](newpage.html). This homework involved simply learning how to set up a web page.
 [Homework 3](hmwk3.html). Here we practiced regular expressions.
