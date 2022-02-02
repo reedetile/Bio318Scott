@@ -2,11 +2,16 @@
 title: "Bio381: Reed Scott"
 author: "Reed Scott"
 date: "1/26/2022"
-output: html_document
+output:
+  prettydoc::html_pretty:
+  theme: tactile
+  highlight: github
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
+Welcome! This is the homepage for that I have created as part of the class Bio 381: Computational Biology
+Please peruse and find all the necessary assignments for this course
 
-Link the [this page](newpage.html)
+#Homeworks
+
+[Homework 2](newpage.html). This homework involved simply learning how to set up a web page.
+[Homework 3](hmwk3.html). Here we practiced regular expressions.

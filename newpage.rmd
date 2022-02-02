@@ -2,7 +2,10 @@
 title: "newpage"
 author: "Reed Scott"
 date: "1/26/2022"
-output: html_document
+output:
+  prettydoc::html_pretty:
+  theme: tactile
+  highlight: github
 ---
 
 ```{r setup, include=FALSE}
