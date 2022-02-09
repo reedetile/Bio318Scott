@@ -38,6 +38,9 @@ q3 <- runif(2)
 atanq3 <- atan(q3)
 atanq3
 
+r <- sqrt(q3[1]^2) + q3[2]^2
+r
+
 #Question 4
 
 queue <- c("sheep", "fox", "owl", "ant")
