@@ -14,4 +14,5 @@ Please peruse and find all the necessary assignments for this course
 # Homeworks
 
 [Homework 2](newpage.html). This homework involved simply learning how to set up a web page.  
-[Homework 3](hmwk3.html). Here we practiced regular expressions.
+[Homework 3](hmwk3.html). Here we practiced regular expressions.  
+[Homework 4](hmwk4.html). Here we learned how to use some basic operators in R to adjust lists
