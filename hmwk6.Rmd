@@ -1,0 +1,194 @@
+---
+title: "hmwk6"
+author: "Reed Scott"
+date: "2/23/2022"
+output:
+  prettydoc::html_pretty:
+  theme: tactile
+  highlight: github
+---
+```{r global option}
+library(ggplot2)
+library(MASS)
+```
+
+
+# Question 1
+**Run the sample code**. Set up a new .Rmd file for this exercise. Copy and paste the code below into   different code chunks, and then read the text and run the code chunks one at a time to see what they do.
+You probably won’t understand everything in the code, but this is a good start for seeing some realisticuses of ggplot. We will cover most of these details in the next few weeks.  
+
+
+```{r echo = FALSE, include = TRUE}
+
+#Creating dummy dataframe
+z <- rnorm(n=3000,mean=0.2)
+z <- data.frame(1:3000,z)
+names(z) <- list("ID","myVar")
+z <- z[z$myVar>0,]
+str(z)
+summary(z$myVar)
+
+#plot
+p1 <- ggplot(data=z, aes(x=myVar, y=..density..)) +
+  geom_histogram(color="grey60",fill="cornsilk",size=0.2) 
+print(p1)
+
+#adds curve to plot
+p1 <-  p1 +  geom_density(linetype="dotted",size=0.75)
+print(p1)
+
+#fitting a normal distribution
+normPars <- fitdistr(z$myVar,"normal")
+print(normPars)
+str(normPars)
+normPars$estimate["mean"] # note structure of getting a named attribute
+
+#Plot Normal 
+meanML <- normPars$estimate["mean"]
+sdML <- normPars$estimate["sd"]
+
+xval <- seq(0,max(z$myVar),len=length(z$myVar))
+
+stat <- stat_function(aes(x = xval, y = ..y..), fun = dnorm, colour="red", n = length(z$myVar), args = list(mean = meanML, sd = sdML))
+p1 + stat
+
+#Plot Exponential Dist
+expoPars <- fitdistr(z$myVar,"exponential")
+rateML <- expoPars$estimate["rate"]
+
+stat2 <- stat_function(aes(x = xval, y = ..y..), fun = dexp, colour="blue", n = length(z$myVar), args = list(rate=rateML))
+p1 + stat + stat2
+
+#Plot uniform prob. dist
+stat3 <- stat_function(aes(x = xval, y = ..y..), fun = dunif, colour="darkgreen", n = length(z$myVar), args = list(min=min(z$myVar), max=max(z$myVar)))
+p1 + stat + stat2 + stat3
+
+#Plot Gamma prob dist
+gammaPars <- fitdistr(z$myVar,"gamma")
+shapeML <- gammaPars$estimate["shape"]
+rateML <- gammaPars$estimate["rate"]
+
+stat4 <- stat_function(aes(x = xval, y = ..y..), fun = dgamma, colour="brown", n = length(z$myVar), args = list(shape=shapeML, rate=rateML))
+p1 + stat + stat2 + stat3 + stat4
+
+#Plot Bet prob dens
+pSpecial <- ggplot(data=z, aes(x=myVar/(max(myVar + 0.1)), y=..density..)) +
+  geom_histogram(color="grey60",fill="cornsilk",size=0.2) + 
+  xlim(c(0,1)) +
+  geom_density(size=0.75,linetype="dotted")
+
+betaPars <- fitdistr(x=z$myVar/max(z$myVar + 0.1),start=list(shape1=1,shape2=2),"beta")
+shape1ML <- betaPars$estimate["shape1"]
+shape2ML <- betaPars$estimate["shape2"]
+
+statSpecial <- stat_function(aes(x = xval, y = ..y..), fun = dbeta, colour="orchid", n = length(z$myVar), args = list(shape1=shape1ML,shape2=shape2ML))
+pSpecial + statSpecial
+```
+
+# Question 2
+
+**Try it with your own data.** Once the code is in and runs, try running this analysis on your own data (or data from your lab, or data from a published paper; if you’re stumped, check out publicly available data sets on Dryad, ESA, or the LTER Network). Find a vector of data (of any size), set it up in a .csv file, and read the data into a data frame with this code chunk:
+
+I choose to use data from my master's degree.
+
+```{r}
+###Question2##
+DMC <- read.table("DMC.master.csv",header=TRUE,sep=",")
+str(DMC)
+summary(DMC)
+#plot
+p1 <- ggplot(data=DMC, aes(x=Sum, y=..density..)) +
+  geom_histogram(color="grey60",fill="cornsilk",size=0.2) 
+print(p1)
+
+#adds curve to plot
+p1 <-  p1 +  geom_density(linetype="dotted",size=0.75)
+print(p1)
+
+#fitting a normal distribution
+normPars <- fitdistr(DMC$Sum,"normal")
+print(normPars)
+str(normPars)
+normPars$estimate["mean"] # note structure of getting a named attribute
+
+#Plot Normal 
+meanML <- normPars$estimate["mean"]
+sdML <- normPars$estimate["sd"]
+
+xval <- seq(0,max(DMC$Sum),len=length(DMC$Sum))
+
+stat <- stat_function(aes(x = xval, y = ..y..), fun = dnorm, colour="red", n = length(DMC$Sum), args = list(mean = meanML, sd = sdML))
+p1 + stat
+
+#Plot Exponential Dist
+expoPars <- fitdistr(DMC$Sum,"exponential")
+rateML <- expoPars$estimate["rate"]
+
+stat2 <- stat_function(aes(x = xval, y = ..y..), fun = dexp, colour="blue", n = length(DMC$Sum), args = list(rate=rateML))
+p1 + stat + stat2
+
+#Plot uniform prob. dist
+stat3 <- stat_function(aes(x = xval, y = ..y..), fun = dunif, colour="darkgreen", n = length(DMC$Sum), args = list(min=min(DMC$Sum), max=max(DMC$Sum)))
+p1 + stat + stat2 + stat3
+
+########My data is not fitting a gamma distribution, so I didn't run this########
+#Plot Gamma prob dist
+#gammaPars <- fitdistr(DMC$sum,"gamma")
+#shapeML <- gammaPars$estimate["shape"]
+#rateML <- gammaPars$estimate["rate"]
+
+
+#stat4 <- stat_function(aes(x = xval, y = ..y..), fun = dgamma, colour="brown", n = length(DMC$Sum), args = list(shape=shapeML, rate=rateML))
+#p1 + stat + stat2 + stat3 + stat4
+
+########My data is not fitting a beta distribution, so I didn't run this########
+#Plot Beta prob dens
+# pSpecial <- ggplot(data=DMC, aes(x=Sum/(max(Sum + 0.1)), y=..density..)) +
+#   geom_histogram(color="grey60",fill="cornsilk",size=0.2) + 
+#   xlim(c(0,1)) +
+#   geom_density(size=0.75,linetype="dotted")
+# 
+# betaPars <- fitdistr(x=DMC$Sum/max(DMC$Sum + 0.1),start=list(shape1=1,shape2=2),"beta")
+# shape1ML <- betaPars$estimate["shape1"]
+# shape2ML <- betaPars$estimate["shape2"]
+# 
+# statSpecial <- stat_function(aes(x = xval, y = ..y..), fun = dbeta, colour="orchid", n = length(DMC$Sum), args = list(shape1=shape1ML,shape2=shape2ML))
+# pSpecial + statSpecial
+#
+```
+
+# Question 3:
+
+*Find best-fitting distribution. Take a look at the second-to-last graph which shows the histogram of your data and 4 probability density curves (normal, uniform, exponential, gamma) that are fit to the data. Find the best-fitting distribution for your data. For most data sets, the gamma will probably fit best, but if you data set is small, it may be very hard to see much of a difference between the curves. The beta distribution in the final graph is somewhat special. It often fits the data pretty well, but that is because we have assumed the largest data point is the true upper bound, and everything is scaled to that. The fit of the uniform distribution also fixes the upper bound. The other curves (normal, exponential, and gamma) are more realistic because they do not have an upper bound.*
+
+I found that the best distribution for my data was a exponential distribution
+
+# Question 4
+
+**Simulate a new data set**. Using the best-fitting distribution, go back to the code and get the maximum likelihood parameters. Use those to simulate a new data set, with the same length as your original vector, and plot that in a histogram and add the probability density curve. Right below that, generate a fresh histogram plot of the original data, and also include the probability density curve.
+
+```{r}
+#setup fake data
+dmcDUMMY <- rexp(n = 96, rate = 0.002664151)
+dmcDUMMY <- data.frame(1:96, dmcDUMMY)
+names(dmcDUMMY) <- list("ID","sum")
+
+expoPars <- fitdistr(dmcDUMMY$sum,"exponential")
+rateML <- expoPars$estimate["rate"]
+rateML #close to set rate
+
+dummy <- ggplot(data=dmcDUMMY, aes(x=sum, y=..density..)) +
+  geom_histogram(color="grey60",fill="cornsilk",size=0.2) 
+
+dummy_exp_line <- stat_function(aes(x = xval, y = ..y..), fun = dexp, colour="blue", n = length(dmcDUMMY$sum), args = list(rate=rateML))
+dummy + dummy_exp_line
+```
+
+*How do the two histogram profiles compare? Do you think the model is doing a good job of simulating realistic data that match your original measurements? Why or why not?*
+
+The two histograms of data are fairly similar (see graphs below). The model is doing a good job of simulating the data. This is likely because my data was a strong fit to an exponential distribution.
+
+```{r echo = FALSE, include = TRUE}
+p1 + stat + stat2 + stat3
+dummy + dummy_exp_line
+```
