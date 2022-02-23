@@ -7,7 +7,7 @@ output:
   theme: tactile
   highlight: github
 ---
-```{r global option}
+```{r echo = FALSE, include = TRUE}
 library(ggplot2)
 library(MASS)
 ```
