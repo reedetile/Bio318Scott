@@ -13,11 +13,104 @@
 <meta name="author" content="Reed Scott" />
 
 
-<title>Bio381: Reed Scott</title>
+<title>Exercise 08</title>
 
 <script src="data:application/javascript;base64,Ly8gUGFuZG9jIDIuOSBhZGRzIGF0dHJpYnV0ZXMgb24gYm90aCBoZWFkZXIgYW5kIGRpdi4gV2UgcmVtb3ZlIHRoZSBmb3JtZXIgKHRvCi8vIGJlIGNvbXBhdGlibGUgd2l0aCB0aGUgYmVoYXZpb3Igb2YgUGFuZG9jIDwgMi44KS4KZG9jdW1lbnQuYWRkRXZlbnRMaXN0ZW5lcignRE9NQ29udGVudExvYWRlZCcsIGZ1bmN0aW9uKGUpIHsKICB2YXIgaHMgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yQWxsKCJkaXYuc2VjdGlvbltjbGFzcyo9J2xldmVsJ10gPiA6Zmlyc3QtY2hpbGQiKTsKICB2YXIgaSwgaCwgYTsKICBmb3IgKGkgPSAwOyBpIDwgaHMubGVuZ3RoOyBpKyspIHsKICAgIGggPSBoc1tpXTsKICAgIGlmICghL15oWzEtNl0kL2kudGVzdChoLnRhZ05hbWUpKSBjb250aW51ZTsgIC8vIGl0IHNob3VsZCBiZSBhIGhlYWRlciBoMS1oNgogICAgYSA9IGguYXR0cmlidXRlczsKICAgIHdoaWxlIChhLmxlbmd0aCA+IDApIGgucmVtb3ZlQXR0cmlidXRlKGFbMF0ubmFtZSk7CiAgfQp9KTsK"></script>
 
 
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css" data-origin="pandoc">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+
+/* A workaround for https://github.com/jgm/pandoc/issues/4278 */
+a.sourceLine {
+  pointer-events: auto;
+}
+
+</style>
+<script>
+// apply pandoc div.sourceCode style to pre.sourceCode instead
+(function() {
+  var sheets = document.styleSheets;
+  for (var i = 0; i < sheets.length; i++) {
+    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
+    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
+    for (var j = 0; j < rules.length; j++) {
+      var rule = rules[j];
+      // check if there is a div.sourceCode rule
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
+      var style = rule.style.cssText;
+      // check if color or background-color is set
+      if (rule.style.color === '' && rule.style.backgroundColor === '') continue;
+      // replace div.sourceCode by a pre.sourceCode rule
+      sheets[i].deleteRule(j);
+      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
+    }
+  }
+})();
+</script>
 
 
 
@@ -35,24 +128,65 @@
 
 
 <section class="page-header">
-<h1 class="title toc-ignore project-name">Bio381: Reed Scott</h1>
+<h1 class="title toc-ignore project-name">Exercise 08</h1>
 <h4 class="author project-author">Reed Scott</h4>
-<h4 class="date project-date">1/26/2022</h4>
+<h4 class="date project-date">3/16/2022</h4>
 </section>
 
 
 
 <section class="main-content">
-<p>Welcome! This is the homepage for that I have created as part of the class Bio 381: Computational Biology Please peruse and find all the necessary assignments for this course</p>
-<div id="homeworks" class="section level1">
-<h1>Homeworks</h1>
-<p><a href="newpage.html">Homework 2</a>. This homework involved simply learning how to set up a web page.<br />
-<a href="hmwk3.html">Homework 3</a>. Here we practiced regular expressions.<br />
-<a href="hmwk4.html">Homework 4</a>. Here we learned how to use some basic operators in R to adjust lists<br />
-<a href="hmwk5.html">Homework 5</a>. Here we went over how to make and manipulate, vectors, lists, and dataframes<br />
-<a href="hmwk6.html">Homework 6</a>. This homework was about establishing probability distributions. This was actually pretty cool because it could help decide what the best distribution is for analysis.<br />
-<a href="hmwk7.html">Homework 7</a> Here we learned how to use functions from dplyr and the tidyverse<br />
-<a href="hmwk8.html">Homework 8</a> Practice simulating data</p>
+<div id="question-1-think-about-an-ongoing-study-in-your-lab-or-a-paper-you-have-read-in-a-different-class-and-decide-on-a-pattern-that-you-might-expect-in-your-experiment-if-a-specific-hypothesis-were-true." class="section level1">
+<h1>Question 1: Think about an ongoing study in your lab (or a paper you have read in a different class), and decide on a pattern that you might expect in your experiment if a specific hypothesis were true.</h1>
+<p>One of my labmates has been considering environmental effects on the amphibian diseases ranavirus and B. dendrotatidis (BD). One environmental variable of interest is salinity. For simplicities sake I will limit my question here to just the effects of salinity on infection load of amphibians infected with BD.</p>
+</div>
+<div id="question-2-to-start-simply-assume-that-the-data-in-each-of-your-treatment-groups-follow-a-normal-distribution.-specify-the-sample-sizes-means-and-variances-for-each-group-that-would-be-reasonable-if-your-hypothesis-were-true.-you-may-need-to-consult-some-previous-literature-andor-an-expert-in-the-field-to-come-up-with-these-numbers." class="section level1">
+<h1>Question 2: To start simply, assume that the data in each of your treatment groups follow a normal distribution. Specify the sample sizes, means, and variances for each group that would be reasonable if your hypothesis were true. You may need to consult some previous literature and/or an expert in the field to come up with these numbers.</h1>
+<p>We will testing the effects of salinity on infection load. To do this I am taking descriptive statistics provided in <a href="Clulow2016.pdf">Clulow et al 2016</a>. Because this paper defined salinity categorically, I too simply labeled salinity as “high” or “low”. Additionally, I used their figure 5.b to justify my mean and standard deviation for BD infection loads in the low versus high salinity treatments.</p>
+</div>
+<div id="question-3-using-the-methods-we-have-covered-in-class-write-code-to-create-a-random-data-set-that-has-these-attributes.-organize-these-data-into-a-data-frame-with-the-appropriate-structure." class="section level1">
+<h1>Question 3: Using the methods we have covered in class, write code to create a random data set that has these attributes. Organize these data into a data frame with the appropriate structure.</h1>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>salinity <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="st">&#39;low&#39;</span>,<span class="dv">50</span>),<span class="fu">rep</span>(<span class="st">&#39;high&#39;</span>,<span class="dv">50</span>))</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>lowsal.load <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">50</span>, <span class="at">mean =</span> <span class="dv">600</span>, <span class="at">sd =</span> <span class="dv">200</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>highsal.load <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">50</span>, <span class="at">mean =</span> <span class="dv">200</span>, <span class="at">sd =</span> <span class="dv">50</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>bd.load <span class="ot">&lt;-</span> <span class="fu">append</span>(lowsal.load,highsal.load)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>df1 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(salinity,bd.load)</span></code></pre></div>
+</div>
+<div id="question-4-now-write-code-to-analyze-the-data-probably-as-an-anova-or-regression-analysis-but-possibly-as-a-logistic-regression-or-contingency-table-analysis.-write-code-to-generate-a-useful-graph-of-the-data." class="section level1">
+<h1>Question 4: Now write code to analyze the data (probably as an ANOVA or regression analysis, but possibly as a logistic regression or contingency table analysis. Write code to generate a useful graph of the data.</h1>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(bd.load <span class="sc">~</span> salinity)</span></code></pre></div>
+<pre><code>## 
+##  Welch Two Sample t-test
+## 
+## data:  bd.load by salinity
+## t = -13.869, df = 57.114, p-value &lt; 2.2e-16
+## alternative hypothesis: true difference in means between group high and group low is not equal to 0
+## 95 percent confidence interval:
+##  -474.8898 -355.0622
+## sample estimates:
+## mean in group high  mean in group low 
+##           194.2456           609.2216</code></pre>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>salinityPlot <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> df1, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> salinity, <span class="at">y =</span> bd.load, <span class="at">fill =</span> salinity))</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>salinityPlot <span class="sc">+</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">&quot;summary&quot;</span>, <span class="at">fun.y =</span> <span class="st">&quot;mean&quot;</span>)<span class="sc">+</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="at">high =</span><span class="st">&#39;grey30&#39;</span>, <span class="at">low =</span> <span class="st">&#39;gray70&#39;</span>),</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>                    <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&#39;High&#39;</span>, <span class="st">&#39;Low&#39;</span>))</span></code></pre></div>
+<pre><code>## Warning: Ignoring unknown parameters: fun.y</code></pre>
+<pre><code>## No summary function supplied, defaulting to `mean_se()`</code></pre>
+<p><img src="data:image/png;base64,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" /><!-- --></p>
+</div>
+<div id="question-5-try-running-your-analysis-multiple-times-to-get-a-feeling-for-how-variable-the-results-are-with-the-same-parameters-but-different-sets-of-random-numbers." class="section level1">
+<h1>Question 5: Try running your analysis multiple times to get a feeling for how variable the results are with the same parameters, but different sets of random numbers.</h1>
+<p>I ran the analysis 10 times. Each time the interpretation was the same: low salinity samples had higher bd loads on average.</p>
+</div>
+<div id="question-6-now-begin-adjusting-the-means-of-the-different-groups.-given-the-sample-sizes-you-have-chosen-how-small-can-the-differences-between-the-groups-be-the-effect-size-for-you-to-still-detect-a-significant-pattern-p-0.05" class="section level1">
+<h1>Question 6: Now begin adjusting the means of the different groups. Given the sample sizes you have chosen, how small can the differences between the groups be (the “effect size”) for you to still detect a significant pattern (p &lt; 0.05)?</h1>
+<p>I adjusted the means by graduall decreasing the mean BD load in the low treatment and increasing load of the high treatment. I found there stopped being a significant difference once the two treatments were within 100 zoospore equivalents (bd.load) of each other).</p>
+</div>
+<div id="question-7-alternatively-for-the-effect-sizes-you-originally-hypothesized-what-is-the-minimum-sample-size-you-would-need-in-order-to-detect-a-statistically-significant-effect-again-run-the-model-a-few-times-with-the-same-parameter-set-to-get-a-feeling-for-the-effect-of-random-variation-in-the-data." class="section level1">
+<h1>Question 7: Alternatively, for the effect sizes you originally hypothesized, what is the minimum sample size you would need in order to detect a statistically significant effect? Again, run the model a few times with the same parameter set to get a feeling for the effect of random variation in the data.</h1>
+<p>When I gradually decreased the sample size, I found that I still saw significant effects until I reduced the sample size down to n = 10 (versus n = 100 to start).</p>
 </div>
 </section>
 

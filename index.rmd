@@ -18,4 +18,5 @@ Please peruse and find all the necessary assignments for this course
 [Homework 4](hmwk4.html). Here we learned how to use some basic operators in R to adjust lists  
 [Homework 5](hmwk5.html). Here we went over how to make and manipulate, vectors, lists, and dataframes  
 [Homework 6](hmwk6.html). This homework was about establishing probability distributions. This was   actually pretty cool because it could help decide what the best distribution is for analysis.  
-[Homework 7](hmwk7.html) Here we learned how to use functions from dplyr and the tidyverse
+[Homework 7](hmwk7.html) Here we learned how to use functions from dplyr and the tidyverse  
+[Homework 8](hmwk8.html) Practice simulating data

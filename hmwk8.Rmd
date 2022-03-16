@@ -1,0 +1,51 @@
+---
+title: "Exercise 08"
+author: "Reed Scott"
+date: "3/16/2022"
+output:
+  prettydoc::html_pretty:
+  theme: tactile
+  highlight: github
+---
+
+# Question 1: Think about an ongoing study in your lab (or a paper you have read in a different class), and decide on a pattern that you might expect in your experiment if a specific hypothesis were true.
+
+One of my labmates has been considering environmental effects on the amphibian diseases ranavirus and B. dendrotatidis (BD). One environmental variable of interest is salinity. For simplicities sake I will limit my question here to just the effects of salinity on infection load of amphibians infected with BD.
+
+# Question 2: To start simply, assume that the data in each of your treatment groups follow a normal distribution. Specify the sample sizes, means, and variances for each group that would be reasonable if your hypothesis were true. You may need to consult some previous literature and/or an expert in the field to come up with these numbers.
+
+We will testing the effects of salinity on infection load. To do this I am taking descriptive statistics provided in [Clulow et al 2016](Clulow2016.pdf). Because this paper defined salinity categorically, I too simply labeled salinity as "high" or "low". Additionally, I used their figure 5.b to justify my mean and standard deviation for BD infection loads in the low versus high salinity treatments.
+
+# Question 3: Using the methods we have covered in class, write code to create a random data set that has these attributes. Organize these data into a data frame with the appropriate structure.
+
+```{r}
+salinity <- c(rep('low',50),rep('high',50))
+lowsal.load <- rnorm(n = 50, mean = 600, sd = 200)
+highsal.load <- rnorm(n = 50, mean = 200, sd = 50)
+bd.load <- append(lowsal.load,highsal.load)
+df1 <- data.frame(salinity,bd.load)
+```
+
+# Question 4: Now write code to analyze the data (probably as an ANOVA or regression analysis, but possibly as a logistic regression or contingency table analysis. Write code to generate a useful graph of the data.
+
+```{r}
+t.test(bd.load ~ salinity)
+library(ggplot2)
+salinityPlot <- ggplot(data = df1, mapping = aes(x = salinity, y = bd.load, fill = salinity))
+salinityPlot +
+  geom_bar(stat = "summary", fun.y = "mean")+
+  scale_fill_manual(values = c(high ='grey30', low = 'gray70'),
+                    labels = c('High', 'Low'))
+```
+
+# Question 5: Try running your analysis multiple times to get a feeling for how variable the results are with the same parameters, but different sets of random numbers.
+
+I ran the analysis 10 times. Each time the interpretation was the same: low salinity samples had higher bd loads on average.
+
+# Question 6: Now begin adjusting the means of the different groups. Given the sample sizes you have chosen, how small can the differences between the groups be (the “effect size”) for you to still detect a significant pattern (p < 0.05)?
+
+I adjusted the means by graduall decreasing the mean BD load in the low treatment and increasing load of the high treatment. I found there stopped being a significant difference once the two treatments were within 100 zoospore equivalents (bd.load) of each other).
+
+# Question 7: Alternatively, for the effect sizes you originally hypothesized, what is the minimum sample size you would need in order to detect a statistically significant effect? Again, run the model a few times with the same parameter set to get a feeling for the effect of random variation in the data.
+
+When I gradually decreased the sample size, I found that I still saw significant effects until I reduced the sample size down to n = 10 (versus n = 100 to start).

@@ -2,7 +2,7 @@
 # RCS
 #03/02/22
 
-library(dplyr)
+library(tidyverse)
 data(iris)
 dim(iris)
 
@@ -55,4 +55,5 @@ iris6 <- iris %>%
 wideIris <- iris %>%
   pivot_longer(cols = Sepal.Length:Sepal.Width, names_to = 'Measure', values_to = 'Values', values_drop_na = TRUE) %>%
   select('Species','Measure','Values')
+wideIris
   
