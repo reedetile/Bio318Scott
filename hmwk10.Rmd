@@ -1,0 +1,127 @@
+---
+title: "Homework 10"
+author: "Reed Scott"
+date: "3/31/2022"
+output:
+  prettydoc::html_pretty:
+  theme: tactile
+  highlight: github
+---
+
+# Question 1  
+*Using a for loop, write a function to calculate the number of zeroes in a numeric vector. Before entering the loop, set up a counter variable counter <- 0. Inside the loop, add 1 to counter each time you have a zero in the matrix. Finally, use return(counter) for the output.*
+
+```{r}
+#Create counter function#
+count <- function(x){
+  counter <- 0
+  for(i in 1:length(x)){
+    if(x[i] == 0){
+      counter <- counter+1
+    }
+    else{
+      counter <- counter+0
+    }
+  }
+  return(counter)
+}
+
+#Create dummy data + run function
+rv1 <- rep(0,20)
+count(rv1)
+#created a vector of 20 zeros, counter returns 20 zeros
+```
+
+I created a function to count every 0. Then I made a mock vector consisting of 20 zeros. When I ran the function on this vector, it returned a count of 20, so I know the function works. Woohoo!
+
+# Question 2
+*Use subsetting instead of a loop to rewrite the function as a single line of code.*
+
+```{r}
+
+#create function
+count2 <- function(x){
+  return(length(x[which(x == 0)]))
+}
+
+#run function
+rv2 <- c(rep(0,10),rep(1,10)) #create dataset with 10 zeros
+count2(rv2) #returns count of 10
+```
+
+I created a function that uses subsetting [] and the which() function to select only 0s from the vector. Then I use the length statement in place of a counter to tell us how many zeros there are.
+
+# Question 3
+*Write a function that takes as input two integers representing the number of rows and columns in a matrix. The output is a matrix of these dimensions in which each element is the product of the row number x the column number.*
+
+```{r}
+make_matrix <- function(a=4,b=5){
+  m <- matrix(nrow = a, ncol = b)
+  for(i in 1:nrow(m)){
+    for(j in 1:ncol(m)){
+      m[i,j] <- i*j
+    }
+  }
+  return(m)
+}
+make_matrix()
+```
+
+# Question 4
+*In the next few lectures, you will learn how to do a randomization test on your data. We will complete some of the steps today to practice calling custom functions within a for loop. Use the code from the March 31st lecture (Randomization Tests) to complete the following steps:*
+  *a.) Simulate a dataset with 3 groups of data, each group drawn from a distribution with a different mean.*
+  *The final data frame should have 1 column for group and 1 column for the response variable.*
+```{r}
+groupA <- cbind(rep('groupA',100),rnorm(n = 100, mean = 60, sd = 5))
+groupB <- cbind(rep('groupB',100),rnorm(n = 100, mean = 45, sd = 5))
+groupC <- cbind(rep('groupC',100),rnorm(n = 100, mean = 81, sd = 5))
+df1 <- rbind(groupA,groupB,groupC)
+df1
+colnames(df1) <- c('group','variable')
+df1 <- as.data.frame(df1)
+df1$variable <- as.numeric(df1$variable)
+```
+
+  *b.) Write a custom function that 1) reshuffles the response variable, and 2) calculates the mean of each group in the reshuffled data. Store the means in a vector of length 3.*
+  
+```{r}
+library(dplyr)
+shuffle <- function(df = df1){
+  colnames(df) <- c('group','variable')
+  variable <- (sample(df$variable, replace = F))
+  group <- df$group
+  df2 <- data.frame(group,variable)
+  df3 <- df2 %>% group_by(group) %>% summarize(mean = mean(variable))
+  return(df3)
+}
+shuffle(df1)
+```
+
+  *c.) Use a for loop to repeat the function in b 100 times. Store the results in a data frame that has 1 column indicating the replicate number and 1 column for each new group mean, for a total of 4 columns.*
+  
+```{r}
+library(tidyverse)
+results <- data.frame()
+for(i in 1:100){
+  df3 <- shuffle(df1)
+  df3 <- df3 %>% pivot_wider(names_from = group, values_from = mean)
+  #rownames_to_column(df3)
+  df3 <-cbind(i,df3)
+  results <- rbind(results, df3)
+}
+results  
+```
+
+  *d.) Use qplot() to create a histogram of the means for each reshuffled group. Or, if you want a challenge, use ggplot() to overlay all 3 histograms in the same figure. How do the distributions of reshuffled means compare to the original means?*
+  
+```{r}
+library(ggplot2)
+xlabel <- c('GroupA','GroupB','GroupC')
+loop.vector <- 2:4
+for( i in loop.vector){
+  plot <- qplot(results[,i], geom='histogram',xlab = xlabel[i-1])
+  print(plot)
+}
+```
+
+I choose to go a slightly different route to add a challenge by making all 3 graphs at once using a for loop. I also added in a line of code so that all my histograms would have a properly labeled x axis. Based on the original meanse assigned to each group (A = 60, B = 45, C = 81), the distributions for all reshuffled groups are slightly off. Group A seems to have an *almost* normal distirubtion with a mean somewhere below 60. Group B has a more skewed distribution with some potential outliers. Group C has a fairly normaly distribution but is far from its original mean of 81.

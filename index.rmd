@@ -20,4 +20,5 @@ Please peruse and find all the necessary assignments for this course
 [Homework 6](hmwk6.html). This homework was about establishing probability distributions. This was   actually pretty cool because it could help decide what the best distribution is for analysis.  
 [Homework 7](hmwk7.html) Here we learned how to use functions from dplyr and the tidyverse  
 [Homework 8](hmwk8.html) Practice simulating data  
-[Homework 9](hmwk9.html) Practice with control structures. Creating functions, and using a for loop *for* fun.
+[Homework 9](hmwk9.html) Practice with control structures. Creating functions, and using a for loop *for* fun.  
+[Homweork 10](hmwk10.html) More practice with for loops and functions.

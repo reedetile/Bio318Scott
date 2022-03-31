@@ -13,11 +13,104 @@
 <meta name="author" content="Reed Scott" />
 
 
-<title>Bio381: Reed Scott</title>
+<title>Homework 10</title>
 
 <script src="data:application/javascript;base64,Ly8gUGFuZG9jIDIuOSBhZGRzIGF0dHJpYnV0ZXMgb24gYm90aCBoZWFkZXIgYW5kIGRpdi4gV2UgcmVtb3ZlIHRoZSBmb3JtZXIgKHRvCi8vIGJlIGNvbXBhdGlibGUgd2l0aCB0aGUgYmVoYXZpb3Igb2YgUGFuZG9jIDwgMi44KS4KZG9jdW1lbnQuYWRkRXZlbnRMaXN0ZW5lcignRE9NQ29udGVudExvYWRlZCcsIGZ1bmN0aW9uKGUpIHsKICB2YXIgaHMgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yQWxsKCJkaXYuc2VjdGlvbltjbGFzcyo9J2xldmVsJ10gPiA6Zmlyc3QtY2hpbGQiKTsKICB2YXIgaSwgaCwgYTsKICBmb3IgKGkgPSAwOyBpIDwgaHMubGVuZ3RoOyBpKyspIHsKICAgIGggPSBoc1tpXTsKICAgIGlmICghL15oWzEtNl0kL2kudGVzdChoLnRhZ05hbWUpKSBjb250aW51ZTsgIC8vIGl0IHNob3VsZCBiZSBhIGhlYWRlciBoMS1oNgogICAgYSA9IGguYXR0cmlidXRlczsKICAgIHdoaWxlIChhLmxlbmd0aCA+IDApIGgucmVtb3ZlQXR0cmlidXRlKGFbMF0ubmFtZSk7CiAgfQp9KTsK"></script>
 
 
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css" data-origin="pandoc">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+
+/* A workaround for https://github.com/jgm/pandoc/issues/4278 */
+a.sourceLine {
+  pointer-events: auto;
+}
+
+</style>
+<script>
+// apply pandoc div.sourceCode style to pre.sourceCode instead
+(function() {
+  var sheets = document.styleSheets;
+  for (var i = 0; i < sheets.length; i++) {
+    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
+    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
+    for (var j = 0; j < rules.length; j++) {
+      var rule = rules[j];
+      // check if there is a div.sourceCode rule
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
+      var style = rule.style.cssText;
+      // check if color or background-color is set
+      if (rule.style.color === '' && rule.style.backgroundColor === '') continue;
+      // replace div.sourceCode by a pre.sourceCode rule
+      sheets[i].deleteRule(j);
+      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
+    }
+  }
+})();
+</script>
 
 
 
@@ -35,26 +128,555 @@
 
 
 <section class="page-header">
-<h1 class="title toc-ignore project-name">Bio381: Reed Scott</h1>
+<h1 class="title toc-ignore project-name">Homework 10</h1>
 <h4 class="author project-author">Reed Scott</h4>
-<h4 class="date project-date">1/26/2022</h4>
+<h4 class="date project-date">3/31/2022</h4>
 </section>
 
 
 
 <section class="main-content">
-<p>Welcome! This is the homepage for that I have created as part of the class Bio 381: Computational Biology Please peruse and find all the necessary assignments for this course</p>
-<div id="homeworks" class="section level1">
-<h1>Homeworks</h1>
-<p><a href="newpage.html">Homework 2</a>. This homework involved simply learning how to set up a web page.<br />
-<a href="hmwk3.html">Homework 3</a>. Here we practiced regular expressions.<br />
-<a href="hmwk4.html">Homework 4</a>. Here we learned how to use some basic operators in R to adjust lists<br />
-<a href="hmwk5.html">Homework 5</a>. Here we went over how to make and manipulate, vectors, lists, and dataframes<br />
-<a href="hmwk6.html">Homework 6</a>. This homework was about establishing probability distributions. This was actually pretty cool because it could help decide what the best distribution is for analysis.<br />
-<a href="hmwk7.html">Homework 7</a> Here we learned how to use functions from dplyr and the tidyverse<br />
-<a href="hmwk8.html">Homework 8</a> Practice simulating data<br />
-<a href="hmwk9.html">Homework 9</a> Practice with control structures. Creating functions, and using a for loop <em>for</em> fun.<br />
-<a href="hmwk10.html">Homweork 10</a> More practice with for loops and functions.</p>
+<div id="question-1" class="section level1">
+<h1>Question 1</h1>
+<p><em>Using a for loop, write a function to calculate the number of zeroes in a numeric vector. Before entering the loop, set up a counter variable counter &lt;- 0. Inside the loop, add 1 to counter each time you have a zero in the matrix. Finally, use return(counter) for the output.</em></p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Create counter function#</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>count <span class="ot">&lt;-</span> <span class="cf">function</span>(x){</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  counter <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(x)){</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span>(x[i] <span class="sc">==</span> <span class="dv">0</span>){</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>      counter <span class="ot">&lt;-</span> counter<span class="sc">+</span><span class="dv">1</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>{</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>      counter <span class="ot">&lt;-</span> counter<span class="sc">+</span><span class="dv">0</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(counter)</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="co">#Create dummy data + run function</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>rv1 <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="dv">0</span>,<span class="dv">20</span>)</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="fu">count</span>(rv1)</span></code></pre></div>
+<pre><code>## [1] 20</code></pre>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">#created a vector of 20 zeros, counter returns 20 zeros</span></span></code></pre></div>
+<p>I created a function to count every 0. Then I made a mock vector consisting of 20 zeros. When I ran the function on this vector, it returned a count of 20, so I know the function works. Woohoo!</p>
+</div>
+<div id="question-2" class="section level1">
+<h1>Question 2</h1>
+<p><em>Use subsetting instead of a loop to rewrite the function as a single line of code.</em></p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">#create function</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>count2 <span class="ot">&lt;-</span> <span class="cf">function</span>(x){</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(<span class="fu">length</span>(x[<span class="fu">which</span>(x <span class="sc">==</span> <span class="dv">0</span>)]))</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co">#run function</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>rv2 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="dv">0</span>,<span class="dv">10</span>),<span class="fu">rep</span>(<span class="dv">1</span>,<span class="dv">10</span>)) <span class="co">#create dataset with 10 zeros</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="fu">count2</span>(rv2) <span class="co">#returns count of 10</span></span></code></pre></div>
+<pre><code>## [1] 10</code></pre>
+<p>I created a function that uses subsetting [] and the which() function to select only 0s from the vector. Then I use the length statement in place of a counter to tell us how many zeros there are.</p>
+</div>
+<div id="question-3" class="section level1">
+<h1>Question 3</h1>
+<p><em>Write a function that takes as input two integers representing the number of rows and columns in a matrix. The output is a matrix of these dimensions in which each element is the product of the row number x the column number.</em></p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>make_matrix <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">a=</span><span class="dv">4</span>,<span class="at">b=</span><span class="dv">5</span>){</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  m <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="at">nrow =</span> a, <span class="at">ncol =</span> b)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(m)){</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span>(j <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">ncol</span>(m)){</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>      m[i,j] <span class="ot">&lt;-</span> i<span class="sc">*</span>j</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(m)</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="fu">make_matrix</span>()</span></code></pre></div>
+<pre><code>##      [,1] [,2] [,3] [,4] [,5]
+## [1,]    1    2    3    4    5
+## [2,]    2    4    6    8   10
+## [3,]    3    6    9   12   15
+## [4,]    4    8   12   16   20</code></pre>
+</div>
+<div id="question-4" class="section level1">
+<h1>Question 4</h1>
+<p><em>In the next few lectures, you will learn how to do a randomization test on your data. We will complete some of the steps today to practice calling custom functions within a for loop. Use the code from the March 31st lecture (Randomization Tests) to complete the following steps:</em> <em>a.) Simulate a dataset with 3 groups of data, each group drawn from a distribution with a different mean.</em> <em>The final data frame should have 1 column for group and 1 column for the response variable.</em></p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>groupA <span class="ot">&lt;-</span> <span class="fu">cbind</span>(<span class="fu">rep</span>(<span class="st">&#39;groupA&#39;</span>,<span class="dv">100</span>),<span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">100</span>, <span class="at">mean =</span> <span class="dv">60</span>, <span class="at">sd =</span> <span class="dv">5</span>))</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>groupB <span class="ot">&lt;-</span> <span class="fu">cbind</span>(<span class="fu">rep</span>(<span class="st">&#39;groupB&#39;</span>,<span class="dv">100</span>),<span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">100</span>, <span class="at">mean =</span> <span class="dv">45</span>, <span class="at">sd =</span> <span class="dv">5</span>))</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>groupC <span class="ot">&lt;-</span> <span class="fu">cbind</span>(<span class="fu">rep</span>(<span class="st">&#39;groupC&#39;</span>,<span class="dv">100</span>),<span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">100</span>, <span class="at">mean =</span> <span class="dv">81</span>, <span class="at">sd =</span> <span class="dv">5</span>))</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>df1 <span class="ot">&lt;-</span> <span class="fu">rbind</span>(groupA,groupB,groupC)</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>df1</span></code></pre></div>
+<pre><code>##        [,1]     [,2]              
+##   [1,] &quot;groupA&quot; &quot;60.253700615324&quot; 
+##   [2,] &quot;groupA&quot; &quot;57.7702468986275&quot;
+##   [3,] &quot;groupA&quot; &quot;60.5922874458184&quot;
+##   [4,] &quot;groupA&quot; &quot;58.2335014350331&quot;
+##   [5,] &quot;groupA&quot; &quot;56.9630371113766&quot;
+##   [6,] &quot;groupA&quot; &quot;66.7430627306205&quot;
+##   [7,] &quot;groupA&quot; &quot;64.7501642281992&quot;
+##   [8,] &quot;groupA&quot; &quot;65.5868364067949&quot;
+##   [9,] &quot;groupA&quot; &quot;47.3036520658878&quot;
+##  [10,] &quot;groupA&quot; &quot;60.6377235037324&quot;
+##  [11,] &quot;groupA&quot; &quot;63.8730434750239&quot;
+##  [12,] &quot;groupA&quot; &quot;56.5433366583046&quot;
+##  [13,] &quot;groupA&quot; &quot;58.4388709914737&quot;
+##  [14,] &quot;groupA&quot; &quot;62.1407529790012&quot;
+##  [15,] &quot;groupA&quot; &quot;63.2368568545219&quot;
+##  [16,] &quot;groupA&quot; &quot;58.3035431867856&quot;
+##  [17,] &quot;groupA&quot; &quot;60.0596339942669&quot;
+##  [18,] &quot;groupA&quot; &quot;62.251746943177&quot; 
+##  [19,] &quot;groupA&quot; &quot;55.743119110269&quot; 
+##  [20,] &quot;groupA&quot; &quot;56.26142416322&quot;  
+##  [21,] &quot;groupA&quot; &quot;53.8308935594701&quot;
+##  [22,] &quot;groupA&quot; &quot;56.7561113172125&quot;
+##  [23,] &quot;groupA&quot; &quot;48.9876380506777&quot;
+##  [24,] &quot;groupA&quot; &quot;64.9269350258635&quot;
+##  [25,] &quot;groupA&quot; &quot;61.8887062035854&quot;
+##  [26,] &quot;groupA&quot; &quot;66.8151911919758&quot;
+##  [27,] &quot;groupA&quot; &quot;58.8960387615353&quot;
+##  [28,] &quot;groupA&quot; &quot;58.2753936232227&quot;
+##  [29,] &quot;groupA&quot; &quot;53.4900113494662&quot;
+##  [30,] &quot;groupA&quot; &quot;57.1569776059592&quot;
+##  [31,] &quot;groupA&quot; &quot;62.1950930419412&quot;
+##  [32,] &quot;groupA&quot; &quot;63.5405760178324&quot;
+##  [33,] &quot;groupA&quot; &quot;62.8448221313861&quot;
+##  [34,] &quot;groupA&quot; &quot;53.6655544140354&quot;
+##  [35,] &quot;groupA&quot; &quot;64.0601267890241&quot;
+##  [36,] &quot;groupA&quot; &quot;58.4020225976491&quot;
+##  [37,] &quot;groupA&quot; &quot;56.5097774429993&quot;
+##  [38,] &quot;groupA&quot; &quot;59.1891064085755&quot;
+##  [39,] &quot;groupA&quot; &quot;67.0492032585431&quot;
+##  [40,] &quot;groupA&quot; &quot;55.9024568897366&quot;
+##  [41,] &quot;groupA&quot; &quot;56.0265296209706&quot;
+##  [42,] &quot;groupA&quot; &quot;54.251088591235&quot; 
+##  [43,] &quot;groupA&quot; &quot;63.9304674198329&quot;
+##  [44,] &quot;groupA&quot; &quot;63.2972662362167&quot;
+##  [45,] &quot;groupA&quot; &quot;54.6468792730316&quot;
+##  [46,] &quot;groupA&quot; &quot;53.9480786689005&quot;
+##  [47,] &quot;groupA&quot; &quot;60.0070674699&quot;   
+##  [48,] &quot;groupA&quot; &quot;65.1898307102438&quot;
+##  [49,] &quot;groupA&quot; &quot;61.9400030087745&quot;
+##  [50,] &quot;groupA&quot; &quot;53.7454472690175&quot;
+##  [51,] &quot;groupA&quot; &quot;61.6863409718493&quot;
+##  [52,] &quot;groupA&quot; &quot;61.4465746955722&quot;
+##  [53,] &quot;groupA&quot; &quot;56.3511034837828&quot;
+##  [54,] &quot;groupA&quot; &quot;60.6344752993313&quot;
+##  [55,] &quot;groupA&quot; &quot;57.8828819175026&quot;
+##  [56,] &quot;groupA&quot; &quot;62.768096101437&quot; 
+##  [57,] &quot;groupA&quot; &quot;60.3321365782773&quot;
+##  [58,] &quot;groupA&quot; &quot;60.9496530244393&quot;
+##  [59,] &quot;groupA&quot; &quot;64.0284122616633&quot;
+##  [60,] &quot;groupA&quot; &quot;63.9044033627915&quot;
+##  [61,] &quot;groupA&quot; &quot;63.9041764876471&quot;
+##  [62,] &quot;groupA&quot; &quot;61.5345847661154&quot;
+##  [63,] &quot;groupA&quot; &quot;56.808388002376&quot; 
+##  [64,] &quot;groupA&quot; &quot;68.1687110107562&quot;
+##  [65,] &quot;groupA&quot; &quot;57.8302540010143&quot;
+##  [66,] &quot;groupA&quot; &quot;61.7913007867389&quot;
+##  [67,] &quot;groupA&quot; &quot;53.2297718786151&quot;
+##  [68,] &quot;groupA&quot; &quot;65.0649520705063&quot;
+##  [69,] &quot;groupA&quot; &quot;59.714473088295&quot; 
+##  [70,] &quot;groupA&quot; &quot;58.934256853279&quot; 
+##  [71,] &quot;groupA&quot; &quot;59.0890543797531&quot;
+##  [72,] &quot;groupA&quot; &quot;59.3467125933199&quot;
+##  [73,] &quot;groupA&quot; &quot;55.2925838841666&quot;
+##  [74,] &quot;groupA&quot; &quot;55.244500248267&quot; 
+##  [75,] &quot;groupA&quot; &quot;50.1021402349977&quot;
+##  [76,] &quot;groupA&quot; &quot;58.2699977894617&quot;
+##  [77,] &quot;groupA&quot; &quot;67.4892489645275&quot;
+##  [78,] &quot;groupA&quot; &quot;61.6567732591227&quot;
+##  [79,] &quot;groupA&quot; &quot;55.5065194025226&quot;
+##  [80,] &quot;groupA&quot; &quot;61.2500858835225&quot;
+##  [81,] &quot;groupA&quot; &quot;69.7937992653095&quot;
+##  [82,] &quot;groupA&quot; &quot;55.9345383342435&quot;
+##  [83,] &quot;groupA&quot; &quot;60.2617698857335&quot;
+##  [84,] &quot;groupA&quot; &quot;63.9371893653267&quot;
+##  [85,] &quot;groupA&quot; &quot;64.0430453213541&quot;
+##  [86,] &quot;groupA&quot; &quot;60.4890715966203&quot;
+##  [87,] &quot;groupA&quot; &quot;63.8470434093944&quot;
+##  [88,] &quot;groupA&quot; &quot;58.6527436047852&quot;
+##  [89,] &quot;groupA&quot; &quot;55.6649104456577&quot;
+##  [90,] &quot;groupA&quot; &quot;54.7993579658006&quot;
+##  [91,] &quot;groupA&quot; &quot;63.7239366284331&quot;
+##  [92,] &quot;groupA&quot; &quot;55.4875346306583&quot;
+##  [93,] &quot;groupA&quot; &quot;47.6086315564214&quot;
+##  [94,] &quot;groupA&quot; &quot;54.7126439667477&quot;
+##  [95,] &quot;groupA&quot; &quot;61.7948673868331&quot;
+##  [96,] &quot;groupA&quot; &quot;53.0511900394713&quot;
+##  [97,] &quot;groupA&quot; &quot;61.498323656494&quot; 
+##  [98,] &quot;groupA&quot; &quot;57.3363972728489&quot;
+##  [99,] &quot;groupA&quot; &quot;52.869723078015&quot; 
+## [100,] &quot;groupA&quot; &quot;60.5747951383412&quot;
+## [101,] &quot;groupB&quot; &quot;42.0127121208645&quot;
+## [102,] &quot;groupB&quot; &quot;43.7726719627646&quot;
+## [103,] &quot;groupB&quot; &quot;49.3274182277483&quot;
+## [104,] &quot;groupB&quot; &quot;51.8957319103724&quot;
+## [105,] &quot;groupB&quot; &quot;38.6412956428827&quot;
+## [106,] &quot;groupB&quot; &quot;38.5423053504525&quot;
+## [107,] &quot;groupB&quot; &quot;47.3766701484476&quot;
+## [108,] &quot;groupB&quot; &quot;46.8221641173563&quot;
+## [109,] &quot;groupB&quot; &quot;46.7302313935118&quot;
+## [110,] &quot;groupB&quot; &quot;35.4490853738854&quot;
+## [111,] &quot;groupB&quot; &quot;44.6154004987943&quot;
+## [112,] &quot;groupB&quot; &quot;40.8514669326195&quot;
+## [113,] &quot;groupB&quot; &quot;41.7272928359017&quot;
+## [114,] &quot;groupB&quot; &quot;39.347304491356&quot; 
+## [115,] &quot;groupB&quot; &quot;41.5373566582093&quot;
+## [116,] &quot;groupB&quot; &quot;46.8670041950352&quot;
+## [117,] &quot;groupB&quot; &quot;40.9318742520295&quot;
+## [118,] &quot;groupB&quot; &quot;46.3021584121236&quot;
+## [119,] &quot;groupB&quot; &quot;40.8466984752176&quot;
+## [120,] &quot;groupB&quot; &quot;39.9758038932255&quot;
+## [121,] &quot;groupB&quot; &quot;50.9346600906734&quot;
+## [122,] &quot;groupB&quot; &quot;44.8790172480369&quot;
+## [123,] &quot;groupB&quot; &quot;39.8627463608982&quot;
+## [124,] &quot;groupB&quot; &quot;44.3228521656661&quot;
+## [125,] &quot;groupB&quot; &quot;42.2870505859816&quot;
+## [126,] &quot;groupB&quot; &quot;37.9073388205075&quot;
+## [127,] &quot;groupB&quot; &quot;44.4500582606151&quot;
+## [128,] &quot;groupB&quot; &quot;39.8485050167344&quot;
+## [129,] &quot;groupB&quot; &quot;47.1801682484288&quot;
+## [130,] &quot;groupB&quot; &quot;34.6612435821585&quot;
+## [131,] &quot;groupB&quot; &quot;51.2594409806134&quot;
+## [132,] &quot;groupB&quot; &quot;47.940099038639&quot; 
+## [133,] &quot;groupB&quot; &quot;43.2055337136222&quot;
+## [134,] &quot;groupB&quot; &quot;43.1047294139757&quot;
+## [135,] &quot;groupB&quot; &quot;54.0373124046987&quot;
+## [136,] &quot;groupB&quot; &quot;40.7026638915219&quot;
+## [137,] &quot;groupB&quot; &quot;40.3485446604031&quot;
+## [138,] &quot;groupB&quot; &quot;39.9362226477575&quot;
+## [139,] &quot;groupB&quot; &quot;47.3000588528703&quot;
+## [140,] &quot;groupB&quot; &quot;44.1427514039715&quot;
+## [141,] &quot;groupB&quot; &quot;43.478725531437&quot; 
+## [142,] &quot;groupB&quot; &quot;49.1548079786107&quot;
+## [143,] &quot;groupB&quot; &quot;47.4876131755849&quot;
+## [144,] &quot;groupB&quot; &quot;45.6557785435585&quot;
+## [145,] &quot;groupB&quot; &quot;48.3502717311746&quot;
+## [146,] &quot;groupB&quot; &quot;39.3728777241063&quot;
+## [147,] &quot;groupB&quot; &quot;37.6171316358636&quot;
+## [148,] &quot;groupB&quot; &quot;46.0539430941755&quot;
+## [149,] &quot;groupB&quot; &quot;43.4019455136026&quot;
+## [150,] &quot;groupB&quot; &quot;37.4329240111608&quot;
+## [151,] &quot;groupB&quot; &quot;37.7440684499174&quot;
+## [152,] &quot;groupB&quot; &quot;55.0988602457309&quot;
+## [153,] &quot;groupB&quot; &quot;51.7359800257631&quot;
+## [154,] &quot;groupB&quot; &quot;44.0570841306579&quot;
+## [155,] &quot;groupB&quot; &quot;41.8809574985452&quot;
+## [156,] &quot;groupB&quot; &quot;42.9401858873554&quot;
+## [157,] &quot;groupB&quot; &quot;50.5898551953362&quot;
+## [158,] &quot;groupB&quot; &quot;39.1334579862811&quot;
+## [159,] &quot;groupB&quot; &quot;49.06468824366&quot;  
+## [160,] &quot;groupB&quot; &quot;47.378933460443&quot; 
+## [161,] &quot;groupB&quot; &quot;49.3520248586407&quot;
+## [162,] &quot;groupB&quot; &quot;46.8425982115543&quot;
+## [163,] &quot;groupB&quot; &quot;40.7247927885745&quot;
+## [164,] &quot;groupB&quot; &quot;52.295475256145&quot; 
+## [165,] &quot;groupB&quot; &quot;35.8707935670473&quot;
+## [166,] &quot;groupB&quot; &quot;49.6647575863111&quot;
+## [167,] &quot;groupB&quot; &quot;41.4896004932378&quot;
+## [168,] &quot;groupB&quot; &quot;41.891120577354&quot; 
+## [169,] &quot;groupB&quot; &quot;51.5515728621105&quot;
+## [170,] &quot;groupB&quot; &quot;46.4316712860057&quot;
+## [171,] &quot;groupB&quot; &quot;48.3478571008229&quot;
+## [172,] &quot;groupB&quot; &quot;47.3312290970181&quot;
+## [173,] &quot;groupB&quot; &quot;54.4611723015378&quot;
+## [174,] &quot;groupB&quot; &quot;44.1476341214664&quot;
+## [175,] &quot;groupB&quot; &quot;46.5124831826073&quot;
+## [176,] &quot;groupB&quot; &quot;44.5532880768693&quot;
+## [177,] &quot;groupB&quot; &quot;44.460532641042&quot; 
+## [178,] &quot;groupB&quot; &quot;35.6385045989743&quot;
+## [179,] &quot;groupB&quot; &quot;48.8954183280248&quot;
+## [180,] &quot;groupB&quot; &quot;47.0153124755398&quot;
+## [181,] &quot;groupB&quot; &quot;48.649831405295&quot; 
+## [182,] &quot;groupB&quot; &quot;42.8549628146104&quot;
+## [183,] &quot;groupB&quot; &quot;52.3691245816777&quot;
+## [184,] &quot;groupB&quot; &quot;41.8039237576157&quot;
+## [185,] &quot;groupB&quot; &quot;40.0471838415301&quot;
+## [186,] &quot;groupB&quot; &quot;39.1910573058129&quot;
+## [187,] &quot;groupB&quot; &quot;41.073825319174&quot; 
+## [188,] &quot;groupB&quot; &quot;54.3424966025612&quot;
+## [189,] &quot;groupB&quot; &quot;40.5230467871868&quot;
+## [190,] &quot;groupB&quot; &quot;40.9702643166225&quot;
+## [191,] &quot;groupB&quot; &quot;45.8333379544583&quot;
+## [192,] &quot;groupB&quot; &quot;48.2812102962904&quot;
+## [193,] &quot;groupB&quot; &quot;43.9326804160683&quot;
+## [194,] &quot;groupB&quot; &quot;37.3919976199224&quot;
+## [195,] &quot;groupB&quot; &quot;56.7087776817592&quot;
+## [196,] &quot;groupB&quot; &quot;45.9703333833895&quot;
+## [197,] &quot;groupB&quot; &quot;51.4133534920431&quot;
+## [198,] &quot;groupB&quot; &quot;45.6390392286454&quot;
+## [199,] &quot;groupB&quot; &quot;48.4953385733006&quot;
+## [200,] &quot;groupB&quot; &quot;46.4591687327162&quot;
+## [201,] &quot;groupC&quot; &quot;79.2856471361043&quot;
+## [202,] &quot;groupC&quot; &quot;82.8171065247143&quot;
+## [203,] &quot;groupC&quot; &quot;73.2920085283571&quot;
+## [204,] &quot;groupC&quot; &quot;73.2114602494743&quot;
+## [205,] &quot;groupC&quot; &quot;75.0515691987735&quot;
+## [206,] &quot;groupC&quot; &quot;79.285389401081&quot; 
+## [207,] &quot;groupC&quot; &quot;71.2871522594158&quot;
+## [208,] &quot;groupC&quot; &quot;77.7375686263766&quot;
+## [209,] &quot;groupC&quot; &quot;85.6819697307991&quot;
+## [210,] &quot;groupC&quot; &quot;80.8175108738112&quot;
+## [211,] &quot;groupC&quot; &quot;87.414443871034&quot; 
+## [212,] &quot;groupC&quot; &quot;94.5872354219441&quot;
+## [213,] &quot;groupC&quot; &quot;72.757502226626&quot; 
+## [214,] &quot;groupC&quot; &quot;90.3981422925825&quot;
+## [215,] &quot;groupC&quot; &quot;78.5798799984674&quot;
+## [216,] &quot;groupC&quot; &quot;71.9100743338744&quot;
+## [217,] &quot;groupC&quot; &quot;87.6149612058521&quot;
+## [218,] &quot;groupC&quot; &quot;83.4537522068921&quot;
+## [219,] &quot;groupC&quot; &quot;85.9847972540295&quot;
+## [220,] &quot;groupC&quot; &quot;77.4669486112216&quot;
+## [221,] &quot;groupC&quot; &quot;82.4926179654562&quot;
+## [222,] &quot;groupC&quot; &quot;84.3307762097815&quot;
+## [223,] &quot;groupC&quot; &quot;83.5863920412736&quot;
+## [224,] &quot;groupC&quot; &quot;85.2018137705448&quot;
+## [225,] &quot;groupC&quot; &quot;85.2070916436042&quot;
+## [226,] &quot;groupC&quot; &quot;78.5740164614705&quot;
+## [227,] &quot;groupC&quot; &quot;75.687469093989&quot; 
+## [228,] &quot;groupC&quot; &quot;82.3063663516868&quot;
+## [229,] &quot;groupC&quot; &quot;84.497528923929&quot; 
+## [230,] &quot;groupC&quot; &quot;77.2401512970411&quot;
+## [231,] &quot;groupC&quot; &quot;86.3253223848664&quot;
+## [232,] &quot;groupC&quot; &quot;82.1953898813537&quot;
+## [233,] &quot;groupC&quot; &quot;80.3717047868767&quot;
+## [234,] &quot;groupC&quot; &quot;72.3311908791932&quot;
+## [235,] &quot;groupC&quot; &quot;87.2959785024082&quot;
+## [236,] &quot;groupC&quot; &quot;79.0425835178979&quot;
+## [237,] &quot;groupC&quot; &quot;83.4135290206959&quot;
+## [238,] &quot;groupC&quot; &quot;78.0458313179997&quot;
+## [239,] &quot;groupC&quot; &quot;75.2540428082108&quot;
+## [240,] &quot;groupC&quot; &quot;71.0985388008034&quot;
+## [241,] &quot;groupC&quot; &quot;75.4741506383577&quot;
+## [242,] &quot;groupC&quot; &quot;79.2767200647281&quot;
+## [243,] &quot;groupC&quot; &quot;84.9701443164084&quot;
+## [244,] &quot;groupC&quot; &quot;82.5381699896876&quot;
+## [245,] &quot;groupC&quot; &quot;85.0371404277255&quot;
+## [246,] &quot;groupC&quot; &quot;76.5848929558827&quot;
+## [247,] &quot;groupC&quot; &quot;84.0892875571752&quot;
+## [248,] &quot;groupC&quot; &quot;78.3879437000265&quot;
+## [249,] &quot;groupC&quot; &quot;83.1195494106602&quot;
+## [250,] &quot;groupC&quot; &quot;77.3336638519019&quot;
+## [251,] &quot;groupC&quot; &quot;86.2311562692452&quot;
+## [252,] &quot;groupC&quot; &quot;93.2228913379428&quot;
+## [253,] &quot;groupC&quot; &quot;78.7878917856773&quot;
+## [254,] &quot;groupC&quot; &quot;81.4026449930129&quot;
+## [255,] &quot;groupC&quot; &quot;91.0368123222184&quot;
+## [256,] &quot;groupC&quot; &quot;83.8577284807707&quot;
+## [257,] &quot;groupC&quot; &quot;83.4338123662754&quot;
+## [258,] &quot;groupC&quot; &quot;72.8443518881837&quot;
+## [259,] &quot;groupC&quot; &quot;72.8370583259913&quot;
+## [260,] &quot;groupC&quot; &quot;83.6084173236494&quot;
+## [261,] &quot;groupC&quot; &quot;77.5213126710593&quot;
+## [262,] &quot;groupC&quot; &quot;85.4045477015979&quot;
+## [263,] &quot;groupC&quot; &quot;79.5904641064427&quot;
+## [264,] &quot;groupC&quot; &quot;81.8120445663885&quot;
+## [265,] &quot;groupC&quot; &quot;79.4458339992621&quot;
+## [266,] &quot;groupC&quot; &quot;79.4452485111593&quot;
+## [267,] &quot;groupC&quot; &quot;80.0640105761596&quot;
+## [268,] &quot;groupC&quot; &quot;77.4185169149421&quot;
+## [269,] &quot;groupC&quot; &quot;76.9291458783723&quot;
+## [270,] &quot;groupC&quot; &quot;84.0687842380864&quot;
+## [271,] &quot;groupC&quot; &quot;81.7220104674822&quot;
+## [272,] &quot;groupC&quot; &quot;73.6892232861063&quot;
+## [273,] &quot;groupC&quot; &quot;88.275240288043&quot; 
+## [274,] &quot;groupC&quot; &quot;83.7172261669244&quot;
+## [275,] &quot;groupC&quot; &quot;87.0014338950962&quot;
+## [276,] &quot;groupC&quot; &quot;89.0831444199873&quot;
+## [277,] &quot;groupC&quot; &quot;85.4017493245009&quot;
+## [278,] &quot;groupC&quot; &quot;81.4345671721032&quot;
+## [279,] &quot;groupC&quot; &quot;84.034198764548&quot; 
+## [280,] &quot;groupC&quot; &quot;77.0226959957706&quot;
+## [281,] &quot;groupC&quot; &quot;81.683849447921&quot; 
+## [282,] &quot;groupC&quot; &quot;84.1395848805419&quot;
+## [283,] &quot;groupC&quot; &quot;82.4905473063294&quot;
+## [284,] &quot;groupC&quot; &quot;75.07223582438&quot;  
+## [285,] &quot;groupC&quot; &quot;77.5166676883989&quot;
+## [286,] &quot;groupC&quot; &quot;78.7182526340465&quot;
+## [287,] &quot;groupC&quot; &quot;89.1178987262114&quot;
+## [288,] &quot;groupC&quot; &quot;85.2184216585152&quot;
+## [289,] &quot;groupC&quot; &quot;77.0560833840919&quot;
+## [290,] &quot;groupC&quot; &quot;81.9727109581137&quot;
+## [291,] &quot;groupC&quot; &quot;74.1771368619339&quot;
+## [292,] &quot;groupC&quot; &quot;91.2850031558981&quot;
+## [293,] &quot;groupC&quot; &quot;79.4142953368025&quot;
+## [294,] &quot;groupC&quot; &quot;84.8701123163485&quot;
+## [295,] &quot;groupC&quot; &quot;81.4061731772551&quot;
+## [296,] &quot;groupC&quot; &quot;80.7705137764519&quot;
+## [297,] &quot;groupC&quot; &quot;83.5861873120592&quot;
+## [298,] &quot;groupC&quot; &quot;88.4984610446743&quot;
+## [299,] &quot;groupC&quot; &quot;70.8889644340233&quot;
+## [300,] &quot;groupC&quot; &quot;75.7523822098773&quot;</code></pre>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(df1) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&#39;group&#39;</span>,<span class="st">&#39;variable&#39;</span>)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>df1 <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(df1)</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>df1<span class="sc">$</span>variable <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(df1<span class="sc">$</span>variable)</span></code></pre></div>
+<p><em>b.) Write a custom function that 1) reshuffles the response variable, and 2) calculates the mean of each group in the reshuffled data. Store the means in a vector of length 3.</em></p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span></code></pre></div>
+<pre><code>## Warning: package &#39;dplyr&#39; was built under R version 4.1.3</code></pre>
+<pre><code>## 
+## Attaching package: &#39;dplyr&#39;</code></pre>
+<pre><code>## The following object is masked _by_ &#39;.GlobalEnv&#39;:
+## 
+##     count</code></pre>
+<pre><code>## The following objects are masked from &#39;package:stats&#39;:
+## 
+##     filter, lag</code></pre>
+<pre><code>## The following objects are masked from &#39;package:base&#39;:
+## 
+##     intersect, setdiff, setequal, union</code></pre>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>shuffle <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">df =</span> df1){</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">colnames</span>(df) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&#39;group&#39;</span>,<span class="st">&#39;variable&#39;</span>)</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>  variable <span class="ot">&lt;-</span> (<span class="fu">sample</span>(df<span class="sc">$</span>variable, <span class="at">replace =</span> F))</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>  group <span class="ot">&lt;-</span> df<span class="sc">$</span>group</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>  df2 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(group,variable)</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>  df3 <span class="ot">&lt;-</span> df2 <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(group) <span class="sc">%&gt;%</span> <span class="fu">summarize</span>(<span class="at">mean =</span> <span class="fu">mean</span>(variable))</span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(df3)</span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a><span class="fu">shuffle</span>(df1)</span></code></pre></div>
+<pre><code>## # A tibble: 3 x 2
+##   group   mean
+##   &lt;chr&gt;  &lt;dbl&gt;
+## 1 groupA  61.6
+## 2 groupB  61.6
+## 3 groupC  62.0</code></pre>
+<p><em>c.) Use a for loop to repeat the function in b 100 times. Store the results in a data frame that has 1 column indicating the replicate number and 1 column for each new group mean, for a total of 4 columns.</em></p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div>
+<pre><code>## Warning: package &#39;tidyverse&#39; was built under R version 4.1.3</code></pre>
+<pre><code>## -- Attaching packages --------------------------------------- tidyverse 1.3.1 --</code></pre>
+<pre><code>## v ggplot2 3.3.5     v purrr   0.3.4
+## v tibble  3.1.6     v stringr 1.4.0
+## v tidyr   1.2.0     v forcats 0.5.1
+## v readr   2.1.2</code></pre>
+<pre><code>## Warning: package &#39;ggplot2&#39; was built under R version 4.1.3</code></pre>
+<pre><code>## Warning: package &#39;tibble&#39; was built under R version 4.1.3</code></pre>
+<pre><code>## Warning: package &#39;tidyr&#39; was built under R version 4.1.3</code></pre>
+<pre><code>## Warning: package &#39;readr&#39; was built under R version 4.1.3</code></pre>
+<pre><code>## Warning: package &#39;purrr&#39; was built under R version 4.1.3</code></pre>
+<pre><code>## Warning: package &#39;stringr&#39; was built under R version 4.1.3</code></pre>
+<pre><code>## Warning: package &#39;forcats&#39; was built under R version 4.1.3</code></pre>
+<pre><code>## -- Conflicts ------------------------------------------ tidyverse_conflicts() --
+## x dplyr::filter() masks stats::filter()
+## x dplyr::lag()    masks stats::lag()</code></pre>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>results <span class="ot">&lt;-</span> <span class="fu">data.frame</span>()</span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">100</span>){</span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>  df3 <span class="ot">&lt;-</span> <span class="fu">shuffle</span>(df1)</span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>  df3 <span class="ot">&lt;-</span> df3 <span class="sc">%&gt;%</span> <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> group, <span class="at">values_from =</span> mean)</span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>  <span class="co">#rownames_to_column(df3)</span></span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a>  df3 <span class="ot">&lt;-</span><span class="fu">cbind</span>(i,df3)</span>
+<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a>  results <span class="ot">&lt;-</span> <span class="fu">rbind</span>(results, df3)</span>
+<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a>results  </span></code></pre></div>
+<pre><code>##       i   groupA   groupB   groupC
+## 1     1 60.57271 62.65417 62.03525
+## 2     2 63.60456 61.07764 60.57993
+## 3     3 64.60746 61.57030 59.08438
+## 4     4 62.94881 60.11078 62.20254
+## 5     5 63.76257 59.53625 61.96331
+## 6     6 61.98128 61.16206 62.11880
+## 7     7 62.52573 62.12671 60.60969
+## 8     8 62.55096 59.31268 63.39849
+## 9     9 60.37746 61.59642 63.28825
+## 10   10 62.37006 62.13160 60.76048
+## 11   11 63.30200 62.14144 59.81869
+## 12   12 60.23848 62.19740 62.82625
+## 13   13 59.97127 63.61077 61.68009
+## 14   14 60.84141 63.78658 60.63415
+## 15   15 62.06499 62.28335 60.91379
+## 16   16 59.73437 65.84061 59.68715
+## 17   17 60.00135 63.23426 62.02652
+## 18   18 60.35438 61.91546 62.99230
+## 19   19 62.63120 59.44860 63.18233
+## 20   20 61.01956 61.91715 62.32542
+## 21   21 61.07364 61.46210 62.72639
+## 22   22 60.92328 61.55669 62.78217
+## 23   23 61.50998 62.73375 61.01841
+## 24   24 60.47716 61.43432 63.35065
+## 25   25 60.85491 61.37483 63.03239
+## 26   26 63.42172 58.52013 63.32029
+## 27   27 64.15163 59.45047 61.66003
+## 28   28 62.39331 60.87441 61.99442
+## 29   29 63.79339 60.30591 61.16284
+## 30   30 61.01742 61.73677 62.50794
+## 31   31 63.77192 59.68457 61.80563
+## 32   32 61.02758 62.63286 61.60169
+## 33   33 63.20733 61.97837 60.07643
+## 34   34 62.15719 62.70752 60.39742
+## 35   35 59.94167 60.93368 64.38678
+## 36   36 63.80308 61.99425 59.46480
+## 37   37 60.65175 61.93497 62.67541
+## 38   38 62.88468 61.17071 61.20675
+## 39   39 61.26606 63.30127 60.69480
+## 40   40 61.31500 62.89238 61.05475
+## 41   41 60.79264 62.14620 62.32329
+## 42   42 61.45697 60.37428 63.43089
+## 43   43 63.03152 61.19249 61.03812
+## 44   44 62.87919 63.03101 59.35193
+## 45   45 62.50838 61.46042 61.29333
+## 46   46 60.23134 62.93512 62.09568
+## 47   47 59.99260 63.20666 62.06287
+## 48   48 60.09725 65.47272 59.69217
+## 49   49 62.65823 61.59775 61.00615
+## 50   50 62.27049 61.21446 61.77718
+## 51   51 61.11077 61.40977 62.74159
+## 52   52 61.99112 59.54990 63.72111
+## 53   53 60.86744 63.01368 61.38101
+## 54   54 62.36012 62.47514 60.42687
+## 55   55 60.47572 64.01045 60.77596
+## 56   56 63.11579 62.71174 59.43460
+## 57   57 62.23749 61.99440 61.03024
+## 58   58 59.26544 62.13924 63.85745
+## 59   59 60.78086 61.83284 62.64844
+## 60   60 62.89887 60.45764 61.90562
+## 61   61 58.64581 63.95164 62.66468
+## 62   62 62.32951 61.80338 61.12924
+## 63   63 63.94004 61.36253 59.95956
+## 64   64 61.91081 63.62086 59.73046
+## 65   65 62.33923 63.26424 59.65866
+## 66   66 62.62157 61.68013 60.96043
+## 67   67 62.93362 60.42536 61.90315
+## 68   68 64.17382 60.72898 60.35933
+## 69   69 58.58927 63.30640 63.36647
+## 70   70 61.82066 61.56981 61.87166
+## 71   71 62.69699 60.99916 61.56598
+## 72   72 61.25234 61.70092 62.30887
+## 73   73 60.02831 62.92935 62.30447
+## 74   74 63.46900 60.53612 61.25701
+## 75   75 63.37184 61.21894 60.67136
+## 76   76 61.55050 62.98174 60.72989
+## 77   77 62.85796 62.88045 59.52372
+## 78   78 60.20928 60.75438 64.29847
+## 79   79 62.32914 62.17564 60.75736
+## 80   80 61.38779 62.33992 61.53442
+## 81   81 60.21795 61.47901 63.56517
+## 82   82 63.83165 61.17930 60.25118
+## 83   83 58.87870 64.31353 62.06990
+## 84   84 63.13540 60.28956 61.83717
+## 85   85 63.52743 62.26903 59.46567
+## 86   86 61.88707 60.12502 63.25004
+## 87   87 65.10561 59.58993 60.56659
+## 88   88 60.84527 61.69772 62.71914
+## 89   89 63.47016 60.46795 61.32403
+## 90   90 64.87488 60.81351 59.57374
+## 91   91 59.24618 64.28975 61.72620
+## 92   92 61.92001 63.16692 60.17520
+## 93   93 63.43852 60.26938 61.55424
+## 94   94 59.66428 61.94733 63.65051
+## 95   95 62.73204 62.14639 60.38370
+## 96   96 61.12922 62.38806 61.74485
+## 97   97 63.04104 60.48584 61.73525
+## 98   98 61.15375 60.42406 63.68431
+## 99   99 61.48145 60.13766 63.64302
+## 100 100 60.17001 63.70929 61.38283</code></pre>
+<p><em>d.) Use qplot() to create a histogram of the means for each reshuffled group. Or, if you want a challenge, use ggplot() to overlay all 3 histograms in the same figure. How do the distributions of reshuffled means compare to the original means?</em></p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>xlabel <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&#39;GroupA&#39;</span>,<span class="st">&#39;GroupB&#39;</span>,<span class="st">&#39;GroupC&#39;</span>)</span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>loop.vector <span class="ot">&lt;-</span> <span class="dv">2</span><span class="sc">:</span><span class="dv">4</span></span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>( i <span class="cf">in</span> loop.vector){</span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a>  plot <span class="ot">&lt;-</span> <span class="fu">qplot</span>(results[,i], <span class="at">geom=</span><span class="st">&#39;histogram&#39;</span>,<span class="at">xlab =</span> xlabel[i<span class="dv">-1</span>])</span>
+<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(plot)</span>
+<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+<p><img src="data:image/png;base64,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" /><!-- --></p>
+<pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAqAAAAHgCAMAAABNUi8GAAAAtFBMVEUAAAAAADoAAGYAOpAAZrYzMzM6AAA6ADo6AGY6kNtNTU1NTW5NTY5NbqtNjshZWVlmAABmADpmtrZmtv9uTU1uTW5uTY5ubo5ubqtuq8huq+SOTU2OTW6OTY6Obk2ObquOyP+QOgCQkDqQkGaQ2/+rbk2rbm6rjk2r5OSr5P+2ZgC2///Ijk3I///bkDrb///kq27k///r6+v/tmb/yI7/25D/5Kv//7b//8j//9v//+T////v2FVeAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAR4UlEQVR4nO2cjXcb1RFHDSR8OAmiJaUpCcVQAk1JwGmCMdH//39Vz5JssvWOfrOe9+bt6t5zyseJ9u7LzM3KMqc+WQN0zEn2AQAsCBS6hkChawgUuoZAoWsIFLpGDfS/MUR5UC1dRaCoulYRKKquVQSKqmsVgaLqWkWgqLpWESiqrlUEiqprFYGi6lpFoKi6VhEoqq5VBIqqaxWBoupaRaCoulYRKKquVQSKqmsVgaLqWkWgqLpWESiqrlUEWkO1+n86ONUsVQRaQ0WgYSoCraEi0DAVgdZQEWiYikBrqAg0TEWgNVQEGqYi0BoqAg1TEWgNFYGGqQi0hopAw1QEWkNFoGEqAq2hItAwFYHWUBFomIpAa6gINExFoDVUBBqmItAaKgINUxFoDRWBhqkItIaKQMNUBFpDRaBhKm+goHBLoNlHmjs8QSNVPEHDVARaQ0WgYSoCraEi0DAVgdZQEWiYikBrqAg0TEWgNVQEGqYi0BoqAg1TEWgNFYGGqQi0hopAw1QEWkNFoGEqAq2hItAwFYHWUBFomIpAa6gINExFoDVUBBqmItAaKgINUxFoDRWBhqkItIaKQMNUBFpDRaBhKgKtoSLQMBWB1lARaJiKQGuoCDRMRaA1VAQapiLQGioCDVMRaA0VgYapCLSGikDDVARaQ0WgYSoCraEi0DAVgdZQEWiYikBrqAg0TEWgNVQEGqYi0BoqAg1TEWgNFYGGqQi0hopAw1QEWkNFoGEqAq2hItAwFYHWUBFomIpAa6gINExFoDVUBBqmItAaKgINUxFoDRWBhqkItIaKQMNUBFpDRaBhKgKtoSLQMBWB1lARaJiKQGuoCDRMRaA1VAQapiLQGioCDVMRaA0VgYapCLSGikDDVEKgF49PH74iUA8EGqY6HOjl07P1+aPXBOqAQMNUhwO9ePJ6ffnsBYE6INAwlSfQ+xvGvxI4Dm5Jb/KrwMGBt/gHPEG3aM9GnqBhqsOBlg9J//iRQLcQaGOVEGh5in6z/xjf4kw9qwi0sUp4i998/Xn++f7fWpypZxWBNlYJT9C3p6fX32UiUAJtq9Le4m9ocaaeVQTaWEWgPhWBNlYRqE9FoI1VBOpTEWhjFYH6VATaWEWgPhWBNlYRqE9FoI1VBOpTEWhjFYH6VATaWEWgPhWBNlYRqE9FoI1VBOpTEWhjFYH6VATaWEWgPhWBNlYRqE9FoI1VBOpTEWhjFYH6VATaWEWgPhWBNlYRqE9FoI1VBOpTEWhjFYH6VATaWEWgPhWBNlYRqE9FoI1VBOpTEWhjFYH6VATaWEWgPhWBNlYRqE9FoI1VBOpTEWhjFYH6VATaWEWghuqWzgi0sYpADRWB5qsI1FARaL6KQA0VgearCNRQEWi+ikANFYHmqwjUUBFovopADRWB5qsI1FARaL6KQA0VgearCNRQEWi+ikANFYHmqwjUUBFovopADRWB5qsI1FARaL6KQA0VgearCNRQEWi+ikANFYHmq7yBHhVaoNqFzQ+/MHiC3qLiCZqvIlBDRaD5KgI1VASaryJQQ0Wg+SoCNVQEmq8iUENFoPkqAjVUBJqvIlBDRaD5KgI1VASaryJQQ0Wg+SoCNVQEmq8iUENFoPkqAjVUBJqvIlBDRaD5KgI1VASaryJQQ0Wg+SoCNVQEmq8iUEOlBTo544mnugMzVBGooSLQfBWBGioCzVcRqKEi0HwVgRoqAs1XEaihItB8FYEaKgLNVxGooSLQfBWBGioCzVcRqKEi0HwVgRoqAs1XEaihItB8FYEaKgLNVxGooSLQfBWBGioCzVcRqKEi0HwVgRoqAs1XEaihItB8FYEaKgLNVxGooSLQfBWBGioCzVcRqKEi0HwVgRoqAs1XEaihItB8FYEaKgLNVxGooSLQfBWBGioCzVcRqKEi0HwVgRoqAs1XEaihItB8FYEaKgLNVxGooSLQfJUQ6Lvnpw9eECiBpqiEQF+erd8+ek2gBJqhOhzo5TeveIsn0CzV4UAvnvy0e4u/v2H8QRvLLStuf2Ek00cBBSPQx2ebSFu/xd+yYk2lX3j4jpFohxB+g3dhhioh0E2cl8/2n5JanKlAoGO/wbswQ9XhQC+/JVACTVMdDrR8iuctnkCTVEKgl09PH15/kG9xpgKBjv0G78IMVUKg79HiTAUCHfsN3oUZqgjUuJBA81UEalxIoPkqAjUuJNB8FYEaFxJovopAjQsJNF9FoMaFBJqvIlDjQgLNVxGocSGB5qsI1LiQQPNVBGpcSKD5KgI1LiTQfBWBGhcSaL6KQI0LCTRfRaDGhQSaryJQ40ICzVcRqHEhgearCNS4kEDzVQRqXEig+SoCNS4k0HwVgRoXEmi+ikCNCwk0X0WgxoUEmq8iUONCAs1XEahxIYHmqwjUuJBA81UEalxIoPkqAjUuJNB8FYEaFxJovopAjQsJNF91pIFWrlFj6rkOTncUAg05U0HfC4HqEGjImQr6XghUh0BDzlTQ90KgOgQacqaCvhcC1SHQkDMV9L0QqA6BhpypoO+FQHUINORMBX0vBKpDoCFnKuh7IVAdAg05U0HfC4HqEGjImQr6XghUh0BDzlTQ90KgOgQacqaCvhcC1SHQkDMV9L0QqA6BhpypoO+FQHUINORMBX0vBKpDoCFnKuh7IVCdIwi0FbfsJfLCO4UVxdRz3WWus4UnaHumnuvgdEc5gidoizMV9L0QqA6BhpypoO+FQHUINORMBX0vBKpDoCFnKuh7IVAdAg05U0HfC4HqEGjImQr6XghUh0BDzlTQ90KgOgQacqaCvhcC1SHQkDMV9L0QqA6BhpypoO+FQHUINORMBX0vBKpDoCFnKuh7IVAdAg05U0HfC4HqEGjImQr6XghUh0BDzlTQ90KgOgQacqaCvhcC1SHQkDMV9L0cDvQIiBq7DoGqSyDQFYESaOdEjV2HQNUlEOiKQAm0c6LGrkOg6hIIdEWgBNo5UWPXIVB1CQS6IlAC7ZyosesQqLoEAl0RKIF2TtTYdQhUXQKBrgiUQDsnauw6BKougUBXBEqgnRM1dh0CVZdAoCsCJdDOiRq7DoGqSyDQFYESaOdEjV2HQNUlEOiKQAm0c6LGrkOg6hIIdEWgBNo5UWPXIVB1CQS6IlAC7ZyosesQqLoEAl0RKIF2TtTYdQhUXQKBrgiUQDsnauw6BKougUBXBEqgnRM1dh0CVZdAoKsjD/Tt6enDVwTaNVFj1+kn0IuvXq3PPyfQrokau04/ge4jJdCOiRq7Tl+Bbp+g9zeYLwvkliVor4IdrTbVCCvQi8cPXuz/ucUfmsItE9deBTsmjV2nryfo5bN9oS3OVNAm3nzrM2LS2HX6CnT98oxAZ8aksev0E+jbR695gs6QSWPX6SfQ9fnpKV+Dzo9JY9fpKND3aHGmgjbx5lufEZPGrkOgysSbb31GTBq7DoEqE2++9Rkxaew6BKpMvPnWZ8SksesQqDLx5lufEZPGrkOgysSbb31GTBq7DoEqE2++9Rkxaew6BKpMvPnWZ8SksesQqDLx5lufEZPGrkOgysSbb31GTBq7DoEqE2++9Rkxaew6BKpMvPnWZ8SksesQqDLx5lufEZPGrkOgysSbb31GTBq7DoEqE2++9Rkxaew6BKpMvPnWZ8SksesQqDLx5lufEZPGrkOgysSbb31GTBq7DoEqE2++9Rkxaew6BKpMvPnWZ8SksesQqDLx5lufEZPGrkOgysSbb31GTBq7DoEqE2++9Rkxaew6BKpMvPnWZ8SksesQqDLx5lufEZPGrkOgysSbb31GTBq7DoEqE2++9Rkxaew6BKpMvPnWZ8SksesQqDLx5lufEZPGrkOgysSbb31GTBq7DoEqE2++9Xlzy9hve1XMBnUIFLYQaMyZCtrgam90YRBozJkK2uBqb3RhEGjMmQra4GpvdGEQaMyZCtrgam90YRBozJkK2uBqb3RhEGjMmQra4GpvdGEQaMyZCtrgam90YRBozJkK2uBqb3RhEGjMmQra4GpvdGEQaMyZCtrgam90YRBozJkK2uBqb3RhEGjMmQra4GpvdGEQaMyZCtrgam90YRBozJkK2uBqb3RhEGjMmQra4GpvdGEcQ6CtuGVw2qtgnMlz7gCeoEfAMTxBW5ypoA2u9kYXBoHGnKmgDa72RhcGgcacqaANrvZGFwaBxpypoA2u9kYXBoHGnKmgDa72RhcGgcacqaANrvZGFwaBxpypoA2u9kYXBoHGnKmgDa72RhcGgcacqaANrvZGFwaBxpypoA2u9kYXBoHGnKmgDa72RhcGgcacqaANrvZGFwaBxpypoA2u9kYXBoHGnKmgDa72RhcGgcacqaANrvZGFwaBxpypoA2u9kYXxrEH6vjNvu8RxyvdEe6KteKxDTr277wjgcIAa8VjG3Ts33lHAoUB1orHNujYv/OOBAoDrBWPbdCxf+cdCRQGWCse26Bj/847EigMsFY8tkHH/p13JFAYYK14bIOO/TvvSKAwwFrx2AYd+3fekUBhgLXisQ069u+8I4HCAGvFYxt07N95RwKFAdaKxzbo2L/zjgQKA6wVj23QsX/nHQkUBlgrHtugY//OOxIoDLBWPLZBx/6ddyRQGGCteGyDjv0770igMMBa8dgGHft33pFAYYC14rENOvbvvCOBwgBrxWMbdOzfeUcChQHWisc26Ni/844ECgOsFY9t0LF/5x0JFAZYKx7boGP/zjsSKAywVjy2Qcf+nXckUBhgrXhsg479O+9IoDDAWvHYBh37d96RQGGAteKxDTr277wjgcIAa8VjG3Ts33lHAoUB1orHNujYv/OOBAoDrBWPbdCxf+cdCRQGWCse26Bj/847EigMsFY8tkHH/p13JFAYYK14bIOO/TvvSKAwwFrx2AYd+3fekUBhgLXisQ069u+8oxDo5dPTR68J9GiwVjy2Qcf+nXc8HOi752fr888J9GiwVjy2Qcf+nXc8HOjlN6/WF1+9ItBjwVrx2AYd+3fe8XCgF09ery+fvdj80/0Noy8DqMl4oG8f7QMtaH+8pvz5Q4Xqtl88GOjNE5RAUTVXHQ5U/xo06kyoUN384sFA3z3/WvwUH3UmVKhufvFgoPr3QaPOhArVzS8eDvQ9WpwJFaqbXyRQVD2rCBRV1yoCRdW1ikBRda0iUFRdqwgUVdcqAkXVtYpAUXWtIlBUXasIFFXXKgJF1bWKQFF1rfIG2h99/r9QOJWOdCoCjYVT6RBoApxKh0AT4FQ6Cw8UjgICha4hUOgaAoWuIVDomjkG+u756YMXg/9bdD67U108Pj09yz7LDbtTbX9YYTfsTnV9OIM5BvryrPzgqPd/PGQ+21OVHxZ08bdDU2/H9lSbfzjv6Y/N7lTXhzOYYaDlZ/Kshz+aJ53dqd6WPzIvu2lhd6rNg/3v/+zmUH/e4EFmGOjFk5/KO8P7P9wsnd2pCh2e6t2P/+7oLf56gz8t8i3+4vFZqfP9Hw+Zzu5U6+0PteqF/anOv+7pa9DdqW5GZjDHQLePzu6eoLvjXD7tp88/zaqrQB0bnGGgl99e/b56+xp0e6qrp0M/7E51flro5g/OfoPfLjPQ8hnk6pHwdW+f4ndvWz3x8uYLj44OtjvVy2W+xZdvgD581d33Qben2j6r+mlhN6vOAr3Z4MNDb4FzDBSOCAKFriFQ6BoCha4hUOgaAoWuIdAwfjnZ8OWBF/3x3YnyMthDoEH88d2HP6/Xb04+O/Sy8oI3FKpCoEG8KX1uHqMf/Wq+bBvo9q8gQKAx/Cm53z79/uTDn8t7+b3Nv3zyw9VffvvkXycnm3gJ1AmBxvD7F9dv2r99fK8keO/qf9eBflyavbd/iz/wnIVrCDSGbYgfn5x8sGnxy907/uYvN4F+efX33Yek7dcDcBgCjWH/BL16N/9h94zc/8v+75sXbZ+gv3/BI1SEQGPYf1WpBbr/SAUHIdAgftkmdx3oBz/c8hb/6c8E6oRAo/jP9vugH/161eT+Q9LvX3y2+fsHgw9JfIqXIdAw3uz+E9FVoOvdt5muPjj99S/bbzPdu/4vSfSpQqBt2FYLbgi0DQQ6EQJtA4FOhEChawgUuoZAoWsIFLqGQKFrCBS6hkCha/4Hd4JHmdDFPXcAAAAASUVORK5CYII=" /><!-- --></p>
+<pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+<p><img src="data:image/png;base64,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" /><!-- --></p>
+<p>I choose to go a slightly different route to add a challenge by making all 3 graphs at once using a for loop. I also added in a line of code so that all my histograms would have a properly labeled x axis. Based on the original meanse assigned to each group (A = 60, B = 45, C = 81), the distributions for all reshuffled groups are slightly off. Group A seems to have an <em>almost</em> normal distirubtion with a mean somewhere below 60. Group B has a more skewed distribution with some potential outliers. Group C has a fairly normaly distribution but is far from its original mean of 81.</p>
 </div>
 </section>
 
