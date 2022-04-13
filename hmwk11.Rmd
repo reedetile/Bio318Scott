@@ -1,0 +1,55 @@
+---
+title: "Homework 11"
+author: "Reed Scott"
+date: "4/7/2022"
+output:
+  prettydoc::html_pretty:
+  theme: tactile
+  highlight: github
+---
+
+*Repeat the exercise from the Batch Processing Lecture (5 April), but do it using real data sets rather than purely simulated. Check with folks in your lab to see if there are multiple data sets available for analysis, or ask Nick, Lauren, or Emily for suggestions for other data sources. Stick to simple data analyses and graphics, but try to set it up as a batch process that will work on multiple files and save summary results to a common file.* 
+
+For this exercise, I used a few data sets from my master's thesis work. I built a simple for loop to read in all of the files at once. Realizing that was pretty simple, I then went ahead and made another for loop so I could create a list of the column names for each dataset.
+
+```{r}
+#Description-----------------------------------------
+#Exercise 11: Batch processing
+#batch processing real files. My choosen files are some data sets from my masters
+#  06 Apr 2022
+#RCS
+
+#Initialize -----------------------------------------
+library(tidyverse)
+# set.seed(1234)
+
+#library(TeachingDemos)
+#char2seed('espress withdrawl')
+#char2seed('espress withdrawl', set=FALSE)
+
+# Load functions--------------------------------------
+
+# Global Variables-------------------------------------
+path.root <- 'D:/OneDrive - University of Vermont/Classes/Spring2022/CompBio/Lab/Bio381Scott'
+path.data <- paste(path.root,'/hmwk11Data',sep='')
+setwd(path.root)
+file_names <- list.files(path=path.data)
+head(file_names)
+# Program Body------------------------------------------  
+#for loop to read in CSV files)
+setwd(path.data)
+list <- list()
+for(i in 1:length(file_names)){
+  file.name <- file_names[i]
+  list[[i]] <- read.csv(file = file.name)
+}
+names(list) <- c('Exp3','Exp1','Exp2')
+list2env(list,.GlobalEnv)
+
+#Create function to read names
+names.list <- list()
+for(i in 1:length(file_names)){
+  names.list[[i]] <- names(list[[i]])
+}
+names.list[2]
+```
